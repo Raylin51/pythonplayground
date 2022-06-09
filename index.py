@@ -1,4 +1,5 @@
 import random
+from unittest import result
 
 avada_probability = range(1, 1 + 436)
 crucio_probability = range(437, 437 + 436)
@@ -16,7 +17,7 @@ print(blasting_probability)
 print(prior_probability)
 print(inflating_probability)
 
-round = 1000000
+round = 1
 total = 0
 
 for n in range(0, round):
@@ -28,8 +29,9 @@ for n in range(0, round):
       break
     print('开始用第', i + 1, '张券')
     for j in range(0, 5):
-      result = random.randint(1, 100000)
-      # print(result)
+      # result = random.randint(1, 100000)
+      result = 3000
+      print(result)
       if result in avada_probability:
         print('抽到阿瓦达索命')
         if 'avada' in cards: 
@@ -66,7 +68,7 @@ for n in range(0, round):
           continue
         else:
           cards.append('prior')
-      elif result in prior_probability:
+      elif result in inflating_probability:
         print('抽到充气咒')
         if 'inflating' in cards: 
           continue
@@ -75,4 +77,5 @@ for n in range(0, round):
       else:
         print('啥也没抽到')
     
+print(total)
 print('本次实验概率是', total / round * 100, '%')
