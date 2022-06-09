@@ -17,7 +17,7 @@ print(blasting_probability)
 print(prior_probability)
 print(inflating_probability)
 
-round = 1
+round = 100000
 total = 0
 
 for n in range(0, round):
@@ -29,9 +29,8 @@ for n in range(0, round):
       break
     print('开始用第', i + 1, '张券')
     for j in range(0, 5):
-      # result = random.randint(1, 100000)
-      result = 3000
-      print(result)
+      result = random.randint(1, 100000)
+      # print(result)
       if result in avada_probability:
         print('抽到阿瓦达索命')
         if 'avada' in cards: 
